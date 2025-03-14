@@ -1,26 +1,34 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Import Firebase secrets from environment variables
+import { 
+  REACT_NATIVE_FIREBASE_API_KEY,
+  REACT_NATIVE_FIREBASE_AUTH_DOMAIN,
+  REACT_NATIVE_FIREBASE_PROJECT_ID,
+  REACT_NATIVE_FIREBASE_STORAGE_BUCKET,
+  REACT_NATIVE_FIREBASE_MESSAGING_SENDER_ID,
+  REACT_NATIVE_FIREBASE_APP_ID,
+  REACT_NATIVE_FIREBASE_MEASUREMENT_ID
+} from '@/constants/secrets';
+
+// Firebase configuration using environment variables
 const firebaseConfig = {
-    apiKey: "AIzaSyDgIib222wqK1y0FyjekqIhNSMf3nPbAWE",
-    authDomain: "yourguidance-1f450.firebaseapp.com",
-    projectId: "yourguidance-1f450",
-    storageBucket: "yourguidance-1f450.appspot.com",
-    messagingSenderId: "859483342493",
-    appId: "1:859483342493:web:57bd1505759eb3b5c17674",
-    measurementId: "G-BF4TW86EGF"
-  };
+  apiKey: REACT_NATIVE_FIREBASE_API_KEY,
+  authDomain: REACT_NATIVE_FIREBASE_AUTH_DOMAIN,
+  projectId: REACT_NATIVE_FIREBASE_PROJECT_ID,
+  storageBucket: REACT_NATIVE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: REACT_NATIVE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: REACT_NATIVE_FIREBASE_APP_ID,
+  measurementId: REACT_NATIVE_FIREBASE_MEASUREMENT_ID
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const auth= getAuth(app)
+export const auth = getAuth(app);
 export const storage = getStorage(app);
 export const provider = new GoogleAuthProvider();
