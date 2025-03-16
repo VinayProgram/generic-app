@@ -21,7 +21,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourguidance.shoppingapp"
+      "package": "com.yourguidance.shoppingapp",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",
@@ -29,7 +30,15 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-google-signin/google-signin",
+      ["expo-build-properties",{
+        "ios":{
+          "useFrameworks":"static"
+        }
+      }]
     ],
     "experiments": {
       "typedRoutes": true

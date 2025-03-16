@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { Text } from 'react-native';
 import 'react-native-reanimated';
+import Navigation from './navigation';
 
 export {
   ErrorBoundary,
@@ -30,13 +31,6 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return <Navigation />;
 }
 
-function RootLayoutNav() {
-  return (
-    <> 
-    <Text>hello</Text>
-  </>
-  );
-}
