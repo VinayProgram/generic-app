@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Text } from 'react-native';
 import 'react-native-reanimated';
 import Navigation from './navigation';
-
+import 'react-native-reanimated';
 export {
   ErrorBoundary,
 } from 'expo-router';
